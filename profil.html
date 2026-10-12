@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil | Ukasyah 'Abdurrohman[cite: 6]</title>
+
+    <meta name="description" content="Profil pribadi Ukasyah 'Abdurrohman.[cite: 6]">
+    <meta name="author" content="Ukasyah 'Abdurrohman">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --navy-deep: #051320;
+            --navy-dark: #091c2e;
+            --navy: #0f2c45;
+            --gold: #d4af37;
+            --gold-light: #f3e0aa;
+            --gold-soft: #f7ebd0;
+
+            --white: #ffffff;
+            --cream: #faf9f5;
+            --light: #f4f6f9;
+
+            --text: #161e28;
+            --muted: #5c6773;
+            --border: #e2e8f0;
+
+            --container: 1140px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(15, 44, 69, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+            line-height: 1.75;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: -200px;
+            right: -150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 44, 69, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatOrb 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-40px, 50px) scale(1.15); }
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(90%, var(--container));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 249, 245, 0.82);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        header:hover {
+            background: rgba(250, 249, 245, 0.96);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-360deg) scale(1.12);
+            background: var(--navy);
+            color: var(--gold-light);
+            border-color: var(--navy);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            position: relative;
+            display: block;
+            padding: 9px 15px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 3px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--ease-out-expo);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--navy);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .email-button {
+            padding: 10px 20px !important;
+            color: white !important;
+            background: var(--navy);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 44, 69, 0.15);
+            transition: all 0.35s var(--ease-out-expo) !important;
+        }
+
+        .email-button::after {
+            display: none !important;
+        }
+
+        .email-button:hover {
+            background: var(--navy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-title {
+            max-width: 720px;
+            color: var(--navy-dark);
+            font-size: clamp(40px, 5.5vw, 65px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, #b89123 0%, #ffe891 35%, #d4af37 70%, #b89123 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            animation: textShimmer 4s linear infinite;
+        }
+
+        @keyframes textShimmer {
+            to { background-position: 200% center; }
+        }
+
+        .hero-description {
+            max-width: 630px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .profile-section {
+            padding: 90px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 45px;
+            box-shadow: 0 4px 25px rgba(15, 44, 69, 0.03);
+            transition: all 0.45s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--navy), var(--gold));
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        .profile-card:hover {
+            box-shadow: 0 30px 60px rgba(15, 44, 69, 0.12), 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--navy);
+            border: 3px solid white;
+            box-shadow: 0 10px 30px rgba(15, 44, 69, 0.2), 0 0 20px rgba(212, 175, 55, 0.4);
+            transition: transform 0.5s var(--ease-out-expo);
+        }
+
+        .avatar:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .profile-intro h2 {
+            color: var(--navy);
+            font-size: 26px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .profile-intro p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 12px;
+            color: #2e7d32;
+            font-size: 12px;
+            font-weight: 700;
+            background: rgba(76, 175, 80, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4caf50;
+            box-shadow: 0 0 10px #4caf50;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            color: var(--navy);
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 4px;
+            height: 24px;
+            border-radius: 10px;
+            background: var(--gold);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .info-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .info-item {
+            padding: 20px;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: all 0.35s var(--ease-out-expo);
+        }
+
+        .info-item:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.5);
+            box-shadow: 0 10px 25px rgba(15, 44, 69, 0.08), 0 0 15px rgba(212, 175, 55, 0.15);
+            background: var(--white);
+        }
+
+        .info-label {
+            display: block;
+            margin-bottom: 6px;
+            color: #b08d24;
+            font-size: 11.5px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-value {
+            display: block;
+            color: var(--text);
+            font-size: 14.5px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .about {
+            margin-top: 40px;
+            padding-top: 35px;
+            border-top: 1px solid var(--border);
+        }
+
+        .about-text {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .back-home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .back-home a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 1px solid var(--navy);
+            border-radius: 8px;
+            color: white;
+            background: var(--navy);
+            font-size: 13.5px;
+            font-weight: 700;
+            overflow: hidden;
+            transition: all 0.4s var(--ease-out-expo);
+            box-shadow: 0 6px 20px rgba(15, 44, 69, 0.15);
+        }
+
+        .back-home a::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.35) 50%, transparent 80%);
+            transform: translateX(-140%);
+            animation: buttonGlow 3s infinite;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: translateX(-140%); }
+            20% { transform: translateX(140%); }
+            100% { transform: translateX(140%); }
+        }
+
+        .back-home a:hover {
+            transform: translateY(-4px);
+            background: var(--navy-dark);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+        }
+
+        footer {
+            padding: 45px 0;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 13.5px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer strong {
+            color: white;
+        }
+
+        .footer a {
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s var(--ease-out-expo) both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                justify-content: center;
+            }
+            .brand {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-menu a {
+                padding: 7px 8px;
+                font-size: 11.5px;
+            }
+            .email-button {
+                display: none !important;
+            }
+            .hero {
+                padding: 65px 0 50px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .profile-top {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-card {
+                padding: 30px 20px;
+            }
+            .info-list {
+                grid-template-columns: 1fr;
+            }
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">UA</span>
+            <span class="brand-name">Ukasyah 'Abdurrohman</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="karya.html">Hasil Karya</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="hadist.html">Hadist</a></li>
+                <li><a href="mailto:ukaabtabs@gmail.com" class="email-button">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container fade-in">
+            <span class="hero-small">Personal Profile</span>
+            <h1 class="hero-title">Tentang <span>diri saya.</span></h1>
+            <p class="hero-description">
+                Informasi pribadi dan sedikit cerita tentang Ukasyah 'Abdurrohman.
+            </p>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-card fade-in">
+                <div class="profile-top">
+                    <div class="avatar">
+                        <img src="IMG_20260306_081004.jpg" alt="Foto profil Ukasyah 'Abdurrohman">
+                    </div>
+                    <div class="profile-intro">
+                        <h2>Ukasyah 'Abdurrohman</h2>
+                        <p>Informasi pribadi dan sedikit tentang diri saya.</p>
+                        <div class="status">
+                            <span class="status-dot"></span>
+                            Aktif
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Data Pribadi</h2>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Nama</span>
+                        <span class="info-value">Ukasyah 'Abdurrohman</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Tempat / Tanggal Lahir</span>
+                        <span class="info-value">Purbalingga, 26 November 2026</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Agama</span>
+                        <span class="info-value">Islam</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Golongan Darah</span>
+                        <span class="info-value">O</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Pekerjaan</span>
+                        <span class="info-value">Swasta</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Hobi</span>
+                        <span class="info-value">Main Bola, Mancing</span>
+                    </div>
+                </div>
+
+                <div class="about">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="about-text">
+                        Saya adalah Ukasyah 'Abdurrohman. Website ini saya gunakan sebagai tempat untuk memperkenalkan diri, membagikan kegiatan, foto, hasil karya, serta berbagai hal yang ingin saya dokumentasikan.
+                    </p>
+                </div>
+
+                <div class="back-home">
+                    <a href="index.html">
+                        <span>←</span>
+                        <span>Kembali ke Halaman Utama</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer">
+        <span>© 2026 <strong>Ukasyah 'Abdurrohman</strong></span>
+        <a href="mailto:ukaabtabs@gmail.com">ukaabtabs@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>

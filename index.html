@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Website pribadi Ukasyah 'Abdurrohman. Berisi profil, kegiatan, hasil karya, foto, dan hadist pilihan.">
+<meta name="author" content="Ukasyah 'Abdurrohman">
+
+<title>Ukasyah 'Abdurrohman</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+>
+
+<style>
+    /* =========================
+       DASAR & VARIABEL ULTIMATE
+    ========================= */
+
+    :root {
+        --navy-deep: #051320;
+        --navy-dark: #091c2e;
+        --navy: #0f2c45;
+        --gold: #d4af37;
+        --gold-light: #f3e0aa;
+        --gold-soft: #f7ebd0;
+
+        --white: #ffffff;
+        --cream: #faf9f5;
+        --light: #f4f6f9;
+
+        --text: #161e28;
+        --muted: #5c6773;
+        --border: #e2e8f0;
+
+        --container: 1140px;
+        --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    ::-webkit-scrollbar {
+        width: 7px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--cream);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(15, 44, 69, 0.3);
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--gold);
+    }
+
+    body {
+        background: var(--cream);
+        color: var(--text);
+        font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+        line-height: 1.75;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Efek cahaya ambient latar belakang yang bergerak otomatis */
+    body::before {
+        content: "";
+        position: fixed;
+        width: 650px;
+        height: 650px;
+        top: -200px;
+        right: -150px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 44, 69, 0.05) 50%, transparent 70%);
+        pointer-events: none;
+        z-index: 0;
+        animation: floatOrb 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatOrb {
+        0% { transform: translate(0, 0) scale(1); }
+        100% { transform: translate(-40px, 50px) scale(1.15); }
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .container {
+        width: min(90%, var(--container));
+        margin: auto;
+    }
+
+
+    /* =========================
+       HEADER & NAVIGATION (GLASS)
+    ========================= */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(250, 249, 245, 0.82);
+        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        transition: all 0.4s var(--ease-out-expo);
+    }
+
+    header:hover {
+        background: rgba(250, 249, 245, 0.96);
+        box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08);
+    }
+
+    .navbar {
+        min-height: 82px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 800;
+        color: var(--navy);
+        white-space: nowrap;
+    }
+
+    .brand-mark {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1.5px solid var(--gold);
+        border-radius: 50%;
+        color: var(--gold);
+        font-size: 13px;
+        font-weight: 800;
+        background: rgba(255, 255, 255, 0.6);
+        transition: all 0.5s var(--ease-out-expo);
+    }
+
+    .brand:hover .brand-mark {
+        transform: rotate(-360deg) scale(1.12);
+        background: var(--navy);
+        color: var(--gold-light);
+        border-color: var(--navy);
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.7); /* Efek nyala emas */
+    }
+
+    .brand-name {
+        font-size: 16px;
+        letter-spacing: -0.3px;
+        font-weight: 700;
+    }
+
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        list-style: none;
+    }
+
+    .nav-menu a {
+        position: relative;
+        display: block;
+        padding: 9px 15px;
+        color: var(--muted);
+        font-size: 13.5px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .nav-menu a::after {
+        content: "";
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 3px;
+        height: 2px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s var(--ease-out-expo);
+        box-shadow: 0 0 10px var(--gold); /* Efek garis menu menyala */
+    }
+
+    .nav-menu a:hover {
+        color: var(--navy);
+        text-shadow: 0 0 10px rgba(15, 44, 69, 0.15);
+    }
+
+    .nav-menu a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .email-button {
+        padding: 10px 20px !important;
+        color: white !important;
+        background: var(--navy);
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(15, 44, 69, 0.15);
+        transition: all 0.35s var(--ease-out-expo) !important;
+    }
+
+    .email-button::after {
+        display: none !important;
+    }
+
+    .email-button:hover {
+        background: var(--navy-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.5); /* Efek tombol menyala */
+    }
+
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+        padding: 110px 0 95px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .hero-small {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 20px;
+        padding: 6px 16px;
+        background: rgba(212, 175, 55, 0.1);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        border-radius: 30px;
+        color: #b08d24;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        animation: pulseBadge 3s ease-in-out infinite;
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    }
+
+    @keyframes pulseBadge {
+        0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.2); }
+        50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+    }
+
+    .hero-title {
+        max-width: 720px;
+        color: var(--navy-dark);
+        font-size: clamp(44px, 6vw, 74px);
+        line-height: 1.05;
+        letter-spacing: -2.5px;
+        font-weight: 800;
+    }
+
+    /* Shimmer Text dengan Efek Nyala */
+    .hero-title span {
+        background: linear-gradient(90deg, #b89123 0%, #ffe891 35%, #d4af37 70%, #b89123 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        animation: textShimmer 4s linear infinite;
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    }
+
+    @keyframes textShimmer {
+        to { background-position: 200% center; }
+    }
+
+    .hero-description {
+        max-width: 630px;
+        margin-top: 25px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 38px;
+    }
+
+    .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 28px;
+        border: 1px solid var(--navy);
+        border-radius: 8px;
+        color: white;
+        background: var(--navy);
+        font-size: 13.5px;
+        font-weight: 700;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(15, 44, 69, 0.15);
+        transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.4) 50%, transparent 80%);
+        transform: translateX(-140%);
+        animation: buttonGlow 3s infinite;
+    }
+
+    @keyframes buttonGlow {
+        0% { transform: translateX(-140%); }
+        20% { transform: translateX(140%); }
+        100% { transform: translateX(140%); }
+    }
+
+    .button:hover {
+        transform: translateY(-4px);
+        background: var(--navy-dark);
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); /* Efek tombol utama menyala terang */
+    }
+
+    .button-outline {
+        color: var(--navy);
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .button-outline:hover {
+        color: white;
+        background: var(--navy);
+        box-shadow: 0 0 25px rgba(15, 44, 69, 0.4);
+    }
+
+    /* Foto Profil dengan Efek Aura Cahaya */
+    .hero-photo {
+        position: relative;
+        perspective: 1200px;
+        animation: floatingPhoto 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatingPhoto {
+        0% { transform: translateY(0px) rotate(0deg); }
+        100% { transform: translateY(-12px) rotate(1deg); }
+    }
+
+    .hero-photo img {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 14px;
+        filter: saturate(0.95) contrast(1.03);
+        box-shadow: 0 30px 60px rgba(15, 44, 69, 0.18), 0 0 30px rgba(212, 175, 55, 0.15);
+        transition: all 0.5s var(--ease-out-expo);
+    }
+
+    .hero-photo:hover img {
+        transform: scale(1.02);
+        filter: saturate(1.08);
+        box-shadow: 0 40px 80px rgba(15, 44, 69, 0.3), 0 0 45px rgba(212, 175, 55, 0.5); /* Aura foto menyala saat disentuh */
+    }
+
+    .photo-line {
+        position: absolute;
+        left: -22px;
+        bottom: -22px;
+        width: 130px;
+        height: 130px;
+        border-left: 2px solid var(--gold);
+        border-bottom: 2px solid var(--gold);
+        z-index: -1;
+        box-shadow: -5px 5px 15px rgba(212, 175, 55, 0.3);
+        transition: transform 0.5s var(--ease-out-expo);
+    }
+
+    .hero-photo:hover .photo-line {
+        transform: translate(-10px, 10px) scale(1.05);
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+        scroll-margin-top: 100px;
+    }
+
+    .section {
+        padding: 100px 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .section-heading {
+        max-width: 650px;
+        margin-bottom: 50px;
+    }
+
+    .section-label {
+        margin-bottom: 8px;
+        color: #b08d24;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .section-title {
+        color: var(--navy-dark);
+        font-size: 36px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+        font-weight: 800;
+    }
+
+    .section-text {
+        margin-top: 12px;
+        color: var(--muted);
+        font-size: 15px;
+    }
+
+
+    /* =========================
+       TENTANG SAYA
+    ========================= */
+
+    .about {
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        gap: 80px;
+    }
+
+    .about-number {
+        color: #b08d24;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+    }
+
+    .about-title {
+        margin-top: 14px;
+        color: var(--navy);
+        font-size: 28px;
+        line-height: 1.35;
+        font-weight: 700;
+    }
+
+    .about-text {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.95;
+    }
+
+    .about-text + .about-text {
+        margin-top: 20px;
+    }
+
+
+    /* =========================
+       HAL YANG SAYA LAKUKAN (INTERACTIVE CARDS DENGAN GLOW SPOTLIGHT)
+    ========================= */
+
+    .interests {
+        background: var(--light);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .interest-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 26px;
+    }
+
+    .interest {
+        padding: 44px 34px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.45s var(--ease-out-expo);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+    }
+
+    /* Garis atas menyala terang saat kursor mendekat */
+    .interest::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.45s var(--ease-out-expo);
+        box-shadow: 0 0 15px var(--gold);
+    }
+
+    /* Efek cahaya sorot kursor (Spotlight Glow) */
+    .interest::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(212, 175, 55, 0.12), transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .interest:hover {
+        transform: translateY(-10px) scale(1.01);
+        border-color: rgba(212, 175, 55, 0.6);
+        box-shadow: 0 30px 60px rgba(15, 44, 69, 0.12), 0 0 30px rgba(212, 175, 55, 0.2); /* Kartu bercahaya */
+    }
+
+    .interest:hover::before {
+        transform: scaleX(1);
+    }
+
+    .interest:hover::after {
+        opacity: 1;
+    }
+
+    .interest-number {
+        color: #b08d24;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    .interest h3 {
+        margin-top: 18px;
+        color: var(--navy);
+        font-size: 21px;
+        font-weight: 700;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .interest:hover h3 {
+        color: var(--navy-dark);
+        transform: translateX(4px);
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    }
+
+    .interest p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+
+    /* =========================
+       HADIST SECTION (ROYAL DARK DENGAN EFEK NYALA)
+    ========================= */
+
+    .hadith-section {
+        background: linear-gradient(150deg, var(--navy-dark) 0%, var(--navy-deep) 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hadith-section::before {
+        content: "";
+        position: absolute;
+        width: 450px;
+        height: 450px;
+        bottom: -150px;
+        right: -150px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, transparent 70%);
+        pointer-events: none;
+        animation: pulseGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+        0% { transform: scale(0.9); opacity: 0.5; }
+        100% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .hadith-wrapper {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .hadith-section .section-label {
+        color: var(--gold-light);
+    }
+
+    .hadith-section .section-title {
+        color: white;
+    }
+
+    .hadith-intro {
+        color: rgba(255, 255, 255, 0.72);
+        font-size: 15px;
+        line-height: 1.85;
+    }
+
+    .hadith-box {
+        padding: 52px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        border-left: 4px solid var(--gold);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3), 0 0 25px rgba(212, 175, 55, 0.1);
+        transition: all 0.5s var(--ease-out-expo);
+    }
+
+    .hadith-box:hover {
+        transform: translateY(-6px);
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(212, 175, 55, 0.8);
+        box-shadow: 0 35px 80px rgba(0, 0, 0, 0.45), 0 0 40px rgba(212, 175, 55, 0.3); /* Kotak hadist menyala emas terang */
+    }
+
+    .arabic {
+        direction: rtl;
+        color: white;
+        font-family: "Amiri", serif;
+        font-size: clamp(28px, 3.4vw, 38px);
+        line-height: 2.25;
+        text-align: right;
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.4); /* Teks Arab bercahaya */
+    }
+
+    .translation {
+        margin-top: 30px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 15px;
+        line-height: 1.95;
+    }
+
+    .translation strong {
+        color: var(--gold-light);
+    }
+
+    .source {
+        display: block;
+        margin-top: 12px;
+        color: var(--gold-light);
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+        padding: 45px 0;
+        background: var(--navy-deep);
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 13.5px;
+    }
+
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-name {
+        color: white;
+        font-weight: 700;
+    }
+
+    .footer-email {
+        transition: color 0.3s ease;
+    }
+
+    .footer-email:hover {
+        color: var(--gold-light);
+        text-shadow: 0 0 10px var(--gold);
+    }
+
+
+    /* =========================
+       ANIMASI MUNCUL (FADE IN)
+    ========================= */
+
+    .fade-in {
+        animation: fadeInUp 1s var(--ease-out-expo) both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* =========================
+       RESPONSIVE DESIGN
+    ========================= */
+
+    @media (max-width: 900px) {
+        .navbar {
+            flex-wrap: wrap;
+            padding: 15px 0;
+        }
+
+        .nav-menu {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            grid-template-columns: 1fr 0.8fr;
+            gap: 40px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+        }
+
+        .about,
+        .hadith-wrapper {
+            gap: 40px;
+        }
+
+        .interest-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 700px) {
+        .navbar {
+            justify-content: center;
+        }
+
+        .brand {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nav-menu {
+            gap: 0;
+        }
+
+        .nav-menu a {
+            padding: 7px 8px;
+            font-size: 11.5px;
+        }
+
+        .email-button {
+            display: none !important;
+        }
+
+        .hero {
+            padding: 65px 0 70px;
+        }
+
+        .hero-content {
+            grid-template-columns: 1fr;
+            gap: 45px;
+        }
+
+        .hero-title {
+            font-size: 40px;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-description {
+            font-size: 14.5px;
+        }
+
+        .hero-photo {
+            width: 82%;
+            margin: auto;
+            animation: none;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+        }
+
+        .about,
+        .hadith-wrapper {
+            grid-template-columns: 1fr;
+        }
+
+        .interest-list {
+            grid-template-columns: 1fr;
+        }
+
+        .hadith-box {
+            padding: 32px 24px;
+        }
+
+        .arabic {
+            font-size: 26px;
+        }
+
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .brand-name {
+            font-size: 14px;
+        }
+
+        .brand-mark {
+            width: 38px;
+            height: 38px;
+        }
+
+        .nav-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
+
+        .nav-menu li {
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 34px;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .button {
+            text-align: center;
+        }
+
+        .hero-photo {
+            width: 92%;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER & NAVBAR
+========================= -->
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">UA</span>
+            <span class="brand-name">Ukasyah 'Abdurrohman</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="karya.html">Hasil Karya</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="hadist.html">Hadist</a></li>
+                <li><a href="mailto:ukaabtabs@gmail.com" class="email-button">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- =========================
+     HERO SECTION
+========================= -->
+<main>
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="fade-in">
+                <span class="hero-small">Website Pribadi</span>
+                <h1 class="hero-title">
+                    Halo, saya
+                    <span>Ukasyah 'Abdurrohman.</span>
+                </h1>
+                <p class="hero-description">
+                    Assalamu'alaikum warahmatullahi wabarakatuh.
+                    <br><br>
+                    Selamat datang di website pribadi saya.
+                    Di sini saya menyimpan beberapa cerita,
+                    kegiatan, hasil karya, foto, dan hal-hal
+                    yang menurut saya menarik untuk dibagikan.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="profil.html" class="button">Kenali Saya</a>
+                    <a href="kegiatan.html" class="button button-outline">Lihat Kegiatan</a>
+                </div>
+            </div>
+
+            <div class="hero-photo fade-in">
+                <img
+                    src="uu prof.png"
+                    alt="Foto Ukasyah 'Abdurrohman"
+                    onerror="this.src='https://via.placeholder.com/600x750?text=Foto+Profil'"
+                >
+                <div class="photo-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         TENTANG SAYA
+    ========================= -->
+    <section class="section" id="tentang">
+        <div class="container">
+            <div class="about">
+                <div>
+                    <p class="about-number">01 — TENTANG SAYA</p>
+                    <h2 class="about-title">
+                        Sebuah website sederhana
+                        untuk menyimpan cerita.
+                    </h2>
+                </div>
+
+                <div>
+                    <p class="about-text">
+                        Website ini saya buat sebagai
+                        tempat untuk memperkenalkan diri
+                        dan menyimpan berbagai hal yang
+                        pernah saya lakukan.
+                    </p>
+                    <p class="about-text">
+                        Mulai dari kegiatan bersama teman,
+                        dokumentasi foto, hasil karya,
+                        sampai beberapa tulisan dan
+                        hadist yang menjadi pengingat
+                        bagi saya.
+                    </p>
+                    <p class="about-text">
+                        Saya masih terus belajar dan
+                        mengembangkan website ini sedikit
+                        demi sedikit.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         HAL YANG SAYA LAKUKAN
+    ========================= -->
+    <section class="section interests">
+        <div class="container">
+            <div class="section-heading">
+                <p class="section-label">Isi Website</p>
+                <h2 class="section-title">Beberapa hal yang ada di sini.</h2>
+                <p class="section-text">Pilih bagian yang ingin kamu lihat.</p>
+            </div>
+
+            <div class="interest-list">
+                <a href="kegiatan.html" class="interest">
+                    <div>
+                        <span class="interest-number">01</span>
+                        <h3>Kegiatan</h3>
+                    </div>
+                    <p>Cerita dan dokumentasi kegiatan yang pernah saya lakukan.</p>
+                </a>
+
+                <a href="karya.html" class="interest">
+                    <div>
+                        <span class="interest-number">02</span>
+                        <h3>Hasil Karya</h3>
+                    </div>
+                    <p>Beberapa karya dan project yang pernah saya buat.</p>
+                </a>
+
+                <a href="foto.html" class="interest">
+                    <div>
+                        <span class="interest-number">03</span>
+                        <h3>Foto</h3>
+                    </div>
+                    <p>Kumpulan foto dan momen yang ingin saya abadikan.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================
+         HADIST SECTION
+    ========================= -->
+    <section class="section hadith-section">
+        <div class="container">
+            <div class="hadith-wrapper">
+                <div>
+                    <p class="section-label">Pengingat</p>
+                    <h2 class="section-title">Hadist yang saya jadikan pengingat.</h2>
+                    <p class="hadith-intro">
+                        Semoga ilmu yang kita pelajari
+                        dapat membawa kebaikan dan menjadi
+                        jalan menuju ridha Allah.
+                    </p>
+                </div>
+
+                <div class="hadith-box">
+                    <p class="arabic">
+                        مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ
+                        فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ
+                        بِهِ طَرِيقًا إِلَى الْجَنَّةِ
+                    </p>
+
+                    <div class="translation">
+                        <strong>Artinya:</strong>
+                        <br>
+                        "Siapa yang menempuh jalan untuk mencari ilmu, maka Allah akan mudahkan baginya jalan menuju surga."
+                        <span class="source">HR. Muslim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+    <div class="container footer-content">
+        <p>
+            © 2026
+            <span class="footer-name">Ukasyah 'Abdurrohman</span>
+        </p>
+        <a href="mailto:ukaabtabs@gmail.com" class="footer-email">ukaabtabs@gmail.com</a>
+    </div>
+</footer>
+
+<!-- JavaScript pendukung efek sorot kursor bercahaya pada kartu -->
+<script>
+    const cards = document.querySelectorAll('.interest');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+
+</body>
+</html>

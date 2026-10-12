@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Galeri foto dan momen pilihan Ukasyah 'Abdurrohman.[cite: 2]">
+    <meta name="author" content="Ukasyah 'Abdurrohman">
+
+    <title>Foto-foto | Ukasyah 'Abdurrohman[cite: 2]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --navy-deep: #051320;
+            --navy-dark: #091c2e;
+            --navy: #0f2c45;
+            --gold: #d4af37;
+            --gold-light: #f3e0aa;
+            --gold-soft: #f7ebd0;
+
+            --white: #ffffff;
+            --cream: #faf9f5;
+            --light: #f4f6f9;
+
+            --text: #161e28;
+            --muted: #5c6773;
+            --border: #e2e8f0;
+
+            --container: 1140px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(15, 44, 69, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+            line-height: 1.75;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: -200px;
+            right: -150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 44, 69, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatOrb 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-40px, 50px) scale(1.15); }
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(90%, var(--container));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 249, 245, 0.82);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        header:hover {
+            background: rgba(250, 249, 245, 0.96);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-360deg) scale(1.12);
+            background: var(--navy);
+            color: var(--gold-light);
+            border-color: var(--navy);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            position: relative;
+            display: block;
+            padding: 9px 15px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 3px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--ease-out-expo);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--navy);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .email-button {
+            padding: 10px 20px !important;
+            color: white !important;
+            background: var(--navy);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 44, 69, 0.15);
+            transition: all 0.35s var(--ease-out-expo) !important;
+        }
+
+        .email-button::after {
+            display: none !important;
+        }
+
+        .email-button:hover {
+            background: var(--navy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-title {
+            max-width: 720px;
+            color: var(--navy-dark);
+            font-size: clamp(40px, 5.5vw, 65px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .hero-description {
+            max-width: 630px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .gallery {
+            padding: 90px 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gallery-heading {
+            margin-bottom: 40px;
+        }
+
+        .gallery-heading h2 {
+            color: var(--navy-dark);
+            font-size: 30px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .gallery-heading p {
+            color: var(--muted);
+            font-size: 14.5px;
+        }
+
+        .photos {
+            columns: 3 280px;
+            column-gap: 24px;
+        }
+
+        .photo {
+            position: relative;
+            margin-bottom: 24px;
+            break-inside: avoid;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+            transition: all 0.45s var(--ease-out-expo);
+        }
+
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .photo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(15, 44, 69, 0.15), 0 0 30px rgba(212, 175, 55, 0.25);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .photo:hover img {
+            transform: scale(1.04);
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 35px 20px 18px;
+            color: white;
+            background: linear-gradient(transparent, rgba(9, 28, 46, 0.92));
+            font-size: 14px;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.35s ease, transform 0.35s ease;
+        }
+
+        .photo:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .note {
+            margin-top: 50px;
+            padding: 24px 28px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            color: var(--muted);
+            font-size: 14.5px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+        }
+
+        .back-wrapper {
+            padding: 20px 0 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 1px solid var(--navy);
+            border-radius: 8px;
+            color: var(--navy);
+            background: transparent;
+            font-size: 13.5px;
+            font-weight: 700;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 20%, rgba(15, 44, 69, 0.15) 50%, transparent 80%);
+            transform: translateX(-140%);
+            animation: buttonGlow 3s infinite;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: translateX(-140%); }
+            20% { transform: translateX(140%); }
+            100% { transform: translateX(140%); }
+        }
+
+        .button:hover {
+            color: white;
+            background: var(--navy);
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        footer {
+            padding: 45px 0;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 13.5px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-name {
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-email {
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s var(--ease-out-expo) both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .photos {
+                columns: 2 220px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                justify-content: center;
+            }
+            .brand {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-menu {
+                gap: 0;
+            }
+            .nav-menu a {
+                padding: 7px 8px;
+                font-size: 11.5px;
+            }
+            .email-button {
+                display: none !important;
+            }
+            .hero {
+                padding: 65px 0 50px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .photos {
+                columns: 1;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">UA</span>
+            <span class="brand-name">Ukasyah 'Abdurrohman</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="karya.html">Hasil Karya</a></li>
+                <li><a href="foto.html" class="active">Foto</a></li>
+                <li><a href="hadist.html">Hadist</a></li>
+                <li><a href="mailto:ukaabtabs@gmail.com" class="email-button">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container fade-in">
+            <span class="hero-small">Galeri Pribadi</span>
+            <h1 class="hero-title">Foto dan momen pilihan.</h1>
+            <p class="hero-description">
+                Kumpulan foto yang menyimpan cerita dari kegiatan, kebersamaan, dan momen yang pernah saya lalui.
+            </p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="gallery-heading fade-in">
+                <h2>Koleksi Foto</h2>
+                <p>Beberapa foto dan momen yang saya abadikan.</p>
+            </div>
+
+            <div class="photos fade-in">
+                <figure class="photo">
+                    <img src="IMG_20260306_081004.jpg" alt="Foto profil Ukasyah" onerror="this.src='https://via.placeholder.com/600x800?text=Foto+Profil'">
+                    <figcaption class="caption">Foto profil</figcaption>
+                </figure>
+                <figure class="photo">
+                    <img src="IMG_20260806_195225.jpg" alt="Kegiatan lomba voli" onerror="this.src='https://via.placeholder.com/600x400?text=Lomba+Voli'">
+                    <figcaption class="caption">Kegiatan lomba voli</figcaption>
+                </figure>
+                <figure class="photo">
+                    <img src="IMG_20260517_132108.jpg" alt="Kegiatan futsal" onerror="this.src='https://via.placeholder.com/600x400?text=Futsal'">
+                    <figcaption class="caption">Kegiatan futsal</figcaption>
+                </figure>
+                <figure class="photo">
+                    <img src="IMG_20260607_065704.jpg" alt="Foto bersama teman" onerror="this.src='https://via.placeholder.com/600x400?text=Foto+Bersama'">
+                    <figcaption class="caption">Foto bersama teman</figcaption>
+                </figure>
+                <figure class="photo">
+                    <img src="IMG_20260618_124347.jpg" alt="Juara 2 futsal" onerror="this.src='https://via.placeholder.com/600x400?text=Juara+2+Futsal'">
+                    <figcaption class="caption">Juara 2 futsal</figcaption>
+                </figure>
+            </div>
+
+            <div class="note fade-in">
+                A glimpse into our world.
+            </div>
+        </div>
+    </section>
+
+    <div class="back-wrapper fade-in">
+        <a href="index.html" class="button">
+            &larr; Kembali ke Halaman Utama
+        </a>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <p>© 2026 <span class="footer-name">Ukasyah 'Abdurrohman</span></p>
+        <a href="mailto:ukaabtabs@gmail.com" class="footer-email">ukaabtabs@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>

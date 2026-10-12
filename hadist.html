@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Kumpulan hadist pilihan Ukasyah 'Abdurrohman.[cite: 3]">
+    <meta name="author" content="Ukasyah 'Abdurrohman">
+
+    <title>Hadist | Ukasyah 'Abdurrohman[cite: 3]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --navy-deep: #051320;
+            --navy-dark: #091c2e;
+            --navy: #0f2c45;
+            --gold: #d4af37;
+            --gold-light: #f3e0aa;
+            --gold-soft: #f7ebd0;
+
+            --white: #ffffff;
+            --cream: #faf9f5;
+            --light: #f4f6f9;
+
+            --text: #161e28;
+            --muted: #5c6773;
+            --border: #e2e8f0;
+
+            --container: 1140px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(15, 44, 69, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+            line-height: 1.75;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: -200px;
+            right: -150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 44, 69, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatOrb 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-40px, 50px) scale(1.15); }
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(90%, var(--container));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 249, 245, 0.82);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        header:hover {
+            background: rgba(250, 249, 245, 0.96);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-360deg) scale(1.12);
+            background: var(--navy);
+            color: var(--gold-light);
+            border-color: var(--navy);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            position: relative;
+            display: block;
+            padding: 9px 15px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 3px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--ease-out-expo);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--navy);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .email-button {
+            padding: 10px 20px !important;
+            color: white !important;
+            background: var(--navy);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 44, 69, 0.15);
+            transition: all 0.35s var(--ease-out-expo) !important;
+        }
+
+        .email-button::after {
+            display: none !important;
+        }
+
+        .email-button:hover {
+            background: var(--navy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-title {
+            max-width: 720px;
+            color: var(--navy-dark);
+            font-size: clamp(40px, 5.5vw, 65px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .hero-description {
+            max-width: 630px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .hadist-section {
+            padding: 90px 0 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-heading {
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy-dark);
+            font-size: 30px;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 14.5px;
+        }
+
+        .hadist-list {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .hadist-card {
+            position: relative;
+            padding: 40px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+            transition: all 0.45s var(--ease-out-expo);
+        }
+
+        .hadist-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.6);
+            box-shadow: 0 30px 60px rgba(15, 44, 69, 0.12), 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .hadist-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gold), var(--gold-light));
+            box-shadow: 0 0 15px var(--gold);
+        }
+
+        .hadist-number {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--gold-soft);
+            font-size: 13px;
+            font-weight: 800;
+            box-shadow: 0 0 15px rgba(15, 44, 69, 0.2);
+        }
+
+        .arabic {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Amiri', serif;
+            color: var(--navy);
+            font-size: clamp(26px, 3.2vw, 34px);
+            font-weight: 700;
+            line-height: 2.15;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+        }
+
+        .translation-title {
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .translation {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 24px;
+        }
+
+        .source {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--navy);
+            font-size: 12.5px;
+            font-weight: 700;
+        }
+
+        .source span {
+            color: var(--gold);
+        }
+
+        .note {
+            margin-top: 50px;
+            padding: 24px 28px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            color: var(--muted);
+            font-size: 14.5px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+        }
+
+        .back-wrapper {
+            padding: 20px 0 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 1px solid var(--navy);
+            border-radius: 8px;
+            color: var(--navy);
+            background: transparent;
+            font-size: 13.5px;
+            font-weight: 700;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 20%, rgba(15, 44, 69, 0.15) 50%, transparent 80%);
+            transform: translateX(-140%);
+            animation: buttonGlow 3s infinite;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: translateX(-140%); }
+            20% { transform: translateX(140%); }
+            100% { transform: translateX(140%); }
+        }
+
+        .button:hover {
+            color: white;
+            background: var(--navy);
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        footer {
+            padding: 45px 0;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 13.5px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-name {
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-email {
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s var(--ease-out-expo) both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                justify-content: center;
+            }
+            .brand {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-menu {
+                gap: 0;
+            }
+            .nav-menu a {
+                padding: 7px 8px;
+                font-size: 11.5px;
+            }
+            .email-button {
+                display: none !important;
+            }
+            .hero {
+                padding: 65px 0 50px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .hadist-card {
+                padding: 30px 24px;
+            }
+            .arabic {
+                font-size: 25px;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">UA</span>
+            <span class="brand-name">Ukasyah 'Abdurrohman</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="karya.html">Hasil Karya</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="hadist.html" class="active">Hadist</a></li>
+                <li><a href="mailto:ukaabtabs@gmail.com" class="email-button">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container fade-in">
+            <span class="hero-small">Islamic Collection</span>
+            <h1 class="hero-title">Hadist pilihan.</h1>
+            <p class="hero-description">
+                Kumpulan hadist sebagai pengingat dan pelajaran dalam menjalani kehidupan sehari-hari.
+            </p>
+        </div>
+    </section>
+
+    <section class="hadist-section">
+        <div class="container">
+            <div class="section-heading fade-in">
+                <h2>Kumpulan Hadist</h2>
+                <p>Beberapa hadist pilihan untuk menjadi pengingat dalam kehidupan sehari-hari.</p>
+            </div>
+
+            <div class="hadist-list fade-in">
+                <article class="hadist-card">
+                    <div class="hadist-number">01</div>
+                    <p class="arabic">
+                        إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى
+                    </p>
+                    <p class="translation-title">Terjemahan</p>
+                    <p class="translation">
+                        “Sesungguhnya setiap amalan tergantung pada niatnya, dan setiap orang akan mendapatkan sesuai dengan apa yang ia niatkan.”
+                    </p>
+                    <div class="source">
+                        <span>◆</span> HR. Bukhari dan Muslim
+                    </div>
+                </article>
+
+                <article class="hadist-card">
+                    <div class="hadist-number">02</div>
+                    <p class="arabic">
+                        مَنْ لاَ يَرْحَمُ لاَ يُرْحَمُ
+                    </p>
+                    <p class="translation-title">Terjemahan</p>
+                    <p class="translation">
+                        “Barang siapa tidak menyayangi, maka ia tidak akan disayangi.”
+                    </p>
+                    <div class="source">
+                        <span>◆</span> HR. Bukhari dan Muslim
+                    </div>
+                </article>
+
+                <article class="hadist-card">
+                    <div class="hadist-number">03</div>
+                    <p class="arabic">
+                        خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ
+                    </p>
+                    <p class="translation-title">Terjemahan</p>
+                    <p class="translation">
+                        “Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lainnya.”
+                    </p>
+                    <div class="source">
+                        <span>◆</span> HR. Ahmad
+                    </div>
+                </article>
+            </div>
+
+            <div class="note fade-in">
+                Semoga hadist-hadist ini dapat menjadi pengingat dan memberikan manfaat dalam kehidupan sehari-hari.
+            </div>
+        </div>
+    </section>
+
+    <div class="back-wrapper fade-in">
+        <a href="index.html" class="button">
+            &larr; Kembali ke Halaman Utama
+        </a>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <p>© 2026 <span class="footer-name">Ukasyah 'Abdurrohman</span></p>
+        <a href="mailto:ukaabtabs@gmail.com" class="footer-email">ukaabtabs@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>
