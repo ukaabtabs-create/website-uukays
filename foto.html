@@ -496,6 +496,100 @@
                 text-align: center;
             }
         }
+    
+/* =========================
+   RESPONSIVE PATCH: LAPTOP, TABLET & HP
+   ========================= */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; }
+.container { width: min(92%, var(--container, 1140px)); }
+img, video, iframe { max-width: 100%; }
+button, input, textarea, select { max-width: 100%; }
+p, a, h1, h2, h3, li, span { overflow-wrap: break-word; }
+section, main, footer, header { min-width: 0; }
+.navbar { width: min(92%, var(--container, 1140px)); }
+.nav-menu { min-width: 0; }
+.nav-menu li { min-width: 0; }
+.nav-menu a { white-space: normal; }
+.hero-title, .section-title, .section-heading h2 { overflow-wrap: anywhere; }
+.card, .work, .hadist-card, .profile-card, .hero-content > *, .about > *, .hadith-wrapper > * { min-width: 0; }
+img { height: auto; }
+
+/* Laptop kecil dan tablet landscape */
+@media (max-width: 1024px) {
+  .container, .navbar { width: min(94%, var(--container, 1140px)); }
+  .navbar { gap: 16px; }
+  .nav-menu { gap: 2px; }
+  .nav-menu a { padding: 8px 10px; font-size: 12.5px; }
+  .hero { padding-top: clamp(55px, 8vw, 90px); padding-bottom: clamp(45px, 7vw, 75px); }
+  .hero-content { gap: clamp(24px, 4vw, 48px); }
+  .section, .gallery, .hadist-section, .profile-section { padding-top: clamp(48px, 7vw, 78px); padding-bottom: clamp(48px, 7vw, 78px); }
+  .works { gap: 20px; }
+}
+
+/* Tablet portrait dan HP besar */
+@media (max-width: 768px) {
+  .navbar { min-height: auto; padding: 14px 0; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .brand { max-width: 100%; white-space: normal; justify-content: center; gap: 10px; }
+  .brand-name { font-size: clamp(13px, 2.4vw, 16px); }
+  .nav-menu { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
+  .nav-menu li { flex: 0 0 auto; }
+  .nav-menu a { padding: 8px 10px; font-size: 12px; }
+  .email-button { display: inline-block !important; padding: 8px 12px !important; }
+  .hero { padding: 58px 0 48px; }
+  .hero-title { font-size: clamp(32px, 6vw, 46px); letter-spacing: -1px; }
+  .hero-description { font-size: 15px; line-height: 1.8; }
+  .hero-content { grid-template-columns: 1fr !important; gap: 32px; }
+  .hero-photo { width: min(78%, 390px); margin-inline: auto; }
+  .about, .hadith-wrapper { grid-template-columns: 1fr !important; gap: 28px; }
+  .works { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { grid-template-columns: 1fr !important; }
+  .photos { columns: 2 220px; column-gap: 16px; }
+  .profile-top { gap: 22px; }
+  .info-list, .interest-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hadist-card, .hadith-box, .profile-card { padding: clamp(22px, 4vw, 32px); }
+  .arabic { font-size: clamp(23px, 4vw, 30px); line-height: 1.9; }
+  .footer-content { gap: 14px; flex-wrap: wrap; }
+}
+
+/* HP */
+@media (max-width: 540px) {
+  .container, .navbar { width: 92%; }
+  .navbar { padding: 12px 0; }
+  .brand-mark { width: 38px; height: 38px; flex: 0 0 38px; }
+  .brand-name { font-size: 13px; }
+  .nav-menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 5px; }
+  .nav-menu li { width: 100%; }
+  .nav-menu a { height: 100%; padding: 8px 4px; font-size: 11px; text-align: center; border-radius: 7px; }
+  .nav-menu a.email-button { padding: 8px 4px !important; }
+  .hero { padding: 46px 0 40px; }
+  .hero-small { font-size: 9px; letter-spacing: 1px; padding: 6px 11px; }
+  .hero-title { font-size: clamp(29px, 8.5vw, 38px); line-height: 1.15; letter-spacing: -0.8px; }
+  .hero-description { margin-top: 14px; font-size: 14px; }
+  .section, .gallery, .hadist-section, .profile-section { padding: 44px 0; }
+  .section-title, .gallery-heading h2, .section-heading h2 { font-size: clamp(23px, 6vw, 28px); }
+  .works, .info-list, .interest-list { grid-template-columns: 1fr; }
+  .photos { columns: 1; }
+  .hero-photo { width: min(94%, 360px); }
+  .profile-top { flex-direction: column; align-items: center; text-align: center; }
+  .profile-card, .hadist-card, .hadith-box { padding: 22px 17px; border-radius: 13px; }
+  .arabic { font-size: 23px; }
+  .footer-content, .footer { flex-direction: column; text-align: center; align-items: center; }
+  .hero-actions { flex-wrap: wrap; gap: 10px; }
+  .button { max-width: 100%; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+}
+
+/* HP kecil */
+@media (max-width: 360px) {
+  .container, .navbar { width: 94%; }
+  .brand { gap: 7px; }
+  .brand-name { font-size: 12px; }
+  .nav-menu a { font-size: 10px; padding: 7px 2px; }
+  .hero-title { font-size: 28px; }
+  .hero-description { font-size: 13px; }
+}
+
     </style>
 </head>
 
