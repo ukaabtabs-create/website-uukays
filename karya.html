@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Hasil karya dan project Ukasyah 'Abdurrohman.[cite: 5]">
+    <meta name="author" content="Ukasyah 'Abdurrohman">
+
+    <title>Hasil Karya | Ukasyah 'Abdurrohman[cite: 5]</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        :root {
+            --navy-deep: #051320;
+            --navy-dark: #091c2e;
+            --navy: #0f2c45;
+            --gold: #d4af37;
+            --gold-light: #f3e0aa;
+            --gold-soft: #f7ebd0;
+
+            --white: #ffffff;
+            --cream: #faf9f5;
+            --light: #f4f6f9;
+
+            --text: #161e28;
+            --muted: #5c6773;
+            --border: #e2e8f0;
+
+            --container: 1140px;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(15, 44, 69, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold);
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text);
+            font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+            line-height: 1.75;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 650px;
+            height: 650px;
+            top: -200px;
+            right: -150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(15, 44, 69, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: floatOrb 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-40px, 50px) scale(1.15); }
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(90%, var(--container));
+            margin: auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(250, 249, 245, 0.82);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            transition: all 0.4s var(--ease-out-expo);
+        }
+
+        header:hover {
+            background: rgba(250, 249, 245, 0.96);
+            box-shadow: 0 14px 40px rgba(212, 175, 55, 0.08);
+        }
+
+        .navbar {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+            color: var(--navy);
+            white-space: nowrap;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            color: var(--gold);
+            font-size: 13px;
+            font-weight: 800;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.5s var(--ease-out-expo);
+        }
+
+        .brand:hover .brand-mark {
+            transform: rotate(-360deg) scale(1.12);
+            background: var(--navy);
+            color: var(--gold-light);
+            border-color: var(--navy);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
+        }
+
+        .brand-name {
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            position: relative;
+            display: block;
+            padding: 9px 15px;
+            color: var(--muted);
+            font-size: 13.5px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a::after {
+            content: "";
+            position: absolute;
+            left: 15px;
+            right: 15px;
+            bottom: 3px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s var(--ease-out-expo);
+            box-shadow: 0 0 10px var(--gold);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--navy);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .email-button {
+            padding: 10px 20px !important;
+            color: white !important;
+            background: var(--navy);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 44, 69, 0.15);
+            transition: all 0.35s var(--ease-out-expo) !important;
+        }
+
+        .email-button::after {
+            display: none !important;
+        }
+
+        .email-button:hover {
+            background: var(--navy-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-small {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 30px;
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-title {
+            max-width: 720px;
+            color: var(--navy-dark);
+            font-size: clamp(40px, 5.5vw, 65px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 800;
+        }
+
+        .hero-description {
+            max-width: 630px;
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .section {
+            padding: 90px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+
+        .work {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+            transition: all 0.45s var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .work:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(15, 44, 69, 0.12), 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+
+        .cover {
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light);
+        }
+
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+        .work:hover .cover img {
+            transform: scale(1.05);
+        }
+
+        .cover::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            box-shadow: 0 0 15px var(--gold);
+            z-index: 2;
+        }
+
+        .body {
+            padding: 30px;
+        }
+
+        .type {
+            color: #b08d24;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .body h2 {
+            margin: 10px 0;
+            color: var(--navy);
+            font-size: 20px;
+            line-height: 1.35;
+            font-weight: 700;
+        }
+
+        .body p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--navy);
+            font-size: 13px;
+            font-weight: 800;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .note {
+            margin-top: 50px;
+            padding: 24px 28px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--gold);
+            color: var(--muted);
+            font-size: 14.5px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 4px 20px rgba(15, 44, 69, 0.02);
+        }
+
+        .back-wrapper {
+            padding: 20px 0 90px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border: 1px solid var(--navy);
+            border-radius: 8px;
+            color: var(--navy);
+            background: transparent;
+            font-size: 13.5px;
+            font-weight: 700;
+            transition: all 0.4s var(--ease-out-expo);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 20%, rgba(15, 44, 69, 0.15) 50%, transparent 80%);
+            transform: translateX(-140%);
+            animation: buttonGlow 3s infinite;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: translateX(-140%); }
+            20% { transform: translateX(140%); }
+            100% { transform: translateX(140%); }
+        }
+
+        .button:hover {
+            color: white;
+            background: var(--navy);
+            transform: translateY(-4px);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        footer {
+            padding: 45px 0;
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 13.5px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-name {
+            color: white;
+            font-weight: 700;
+        }
+
+        .footer-email {
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: var(--gold-light);
+            text-shadow: 0 0 10px var(--gold);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s var(--ease-out-expo) both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+            .nav-menu {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .works {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                justify-content: center;
+            }
+            .brand {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-menu {
+                gap: 0;
+            }
+            .nav-menu a {
+                padding: 7px 8px;
+                font-size: 11.5px;
+            }
+            .email-button {
+                display: none !important;
+            }
+            .hero {
+                padding: 65px 0 50px;
+            }
+            .hero-title {
+                font-size: 36px;
+            }
+            .works {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    
+/* =========================
+   RESPONSIVE PATCH: LAPTOP, TABLET & HP
+   ========================= */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; }
+.container { width: min(92%, var(--container, 1140px)); }
+img, video, iframe { max-width: 100%; }
+button, input, textarea, select { max-width: 100%; }
+p, a, h1, h2, h3, li, span { overflow-wrap: break-word; }
+section, main, footer, header { min-width: 0; }
+.navbar { width: min(92%, var(--container, 1140px)); }
+.nav-menu { min-width: 0; }
+.nav-menu li { min-width: 0; }
+.nav-menu a { white-space: normal; }
+.hero-title, .section-title, .section-heading h2 { overflow-wrap: anywhere; }
+.card, .work, .hadist-card, .profile-card, .hero-content > *, .about > *, .hadith-wrapper > * { min-width: 0; }
+img { height: auto; }
+
+/* Laptop kecil dan tablet landscape */
+@media (max-width: 1024px) {
+  .container, .navbar { width: min(94%, var(--container, 1140px)); }
+  .navbar { gap: 16px; }
+  .nav-menu { gap: 2px; }
+  .nav-menu a { padding: 8px 10px; font-size: 12.5px; }
+  .hero { padding-top: clamp(55px, 8vw, 90px); padding-bottom: clamp(45px, 7vw, 75px); }
+  .hero-content { gap: clamp(24px, 4vw, 48px); }
+  .section, .gallery, .hadist-section, .profile-section { padding-top: clamp(48px, 7vw, 78px); padding-bottom: clamp(48px, 7vw, 78px); }
+  .works { gap: 20px; }
+}
+
+/* Tablet portrait dan HP besar */
+@media (max-width: 768px) {
+  .navbar { min-height: auto; padding: 14px 0; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .brand { max-width: 100%; white-space: normal; justify-content: center; gap: 10px; }
+  .brand-name { font-size: clamp(13px, 2.4vw, 16px); }
+  .nav-menu { width: 100%; display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; }
+  .nav-menu li { flex: 0 0 auto; }
+  .nav-menu a { padding: 8px 10px; font-size: 12px; }
+  .email-button { display: inline-block !important; padding: 8px 12px !important; }
+  .hero { padding: 58px 0 48px; }
+  .hero-title { font-size: clamp(32px, 6vw, 46px); letter-spacing: -1px; }
+  .hero-description { font-size: 15px; line-height: 1.8; }
+  .hero-content { grid-template-columns: 1fr !important; gap: 32px; }
+  .hero-photo { width: min(78%, 390px); margin-inline: auto; }
+  .about, .hadith-wrapper { grid-template-columns: 1fr !important; gap: 28px; }
+  .works { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid { grid-template-columns: 1fr !important; }
+  .photos { columns: 2 220px; column-gap: 16px; }
+  .profile-top { gap: 22px; }
+  .info-list, .interest-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hadist-card, .hadith-box, .profile-card { padding: clamp(22px, 4vw, 32px); }
+  .arabic { font-size: clamp(23px, 4vw, 30px); line-height: 1.9; }
+  .footer-content { gap: 14px; flex-wrap: wrap; }
+}
+
+/* HP */
+@media (max-width: 540px) {
+  .container, .navbar { width: 92%; }
+  .navbar { padding: 12px 0; }
+  .brand-mark { width: 38px; height: 38px; flex: 0 0 38px; }
+  .brand-name { font-size: 13px; }
+  .nav-menu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; gap: 5px; }
+  .nav-menu li { width: 100%; }
+  .nav-menu a { height: 100%; padding: 8px 4px; font-size: 11px; text-align: center; border-radius: 7px; }
+  .nav-menu a.email-button { padding: 8px 4px !important; }
+  .hero { padding: 46px 0 40px; }
+  .hero-small { font-size: 9px; letter-spacing: 1px; padding: 6px 11px; }
+  .hero-title { font-size: clamp(29px, 8.5vw, 38px); line-height: 1.15; letter-spacing: -0.8px; }
+  .hero-description { margin-top: 14px; font-size: 14px; }
+  .section, .gallery, .hadist-section, .profile-section { padding: 44px 0; }
+  .section-title, .gallery-heading h2, .section-heading h2 { font-size: clamp(23px, 6vw, 28px); }
+  .works, .info-list, .interest-list { grid-template-columns: 1fr; }
+  .photos { columns: 1; }
+  .hero-photo { width: min(94%, 360px); }
+  .profile-top { flex-direction: column; align-items: center; text-align: center; }
+  .profile-card, .hadist-card, .hadith-box { padding: 22px 17px; border-radius: 13px; }
+  .arabic { font-size: 23px; }
+  .footer-content, .footer { flex-direction: column; text-align: center; align-items: center; }
+  .hero-actions { flex-wrap: wrap; gap: 10px; }
+  .button { max-width: 100%; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+}
+
+/* HP kecil */
+@media (max-width: 360px) {
+  .container, .navbar { width: 94%; }
+  .brand { gap: 7px; }
+  .brand-name { font-size: 12px; }
+  .nav-menu a { font-size: 10px; padding: 7px 2px; }
+  .hero-title { font-size: 28px; }
+  .hero-description { font-size: 13px; }
+}
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+        <a href="index.html" class="brand">
+            <span class="brand-mark">UA</span>
+            <span class="brand-name">Ukasyah 'Abdurrohman</span>
+        </a>
+
+        <nav aria-label="Navigasi utama">
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="kegiatan.html">Kegiatan</a></li>
+                <li><a href="karya.html" class="active">Hasil Karya</a></li>
+                <li><a href="foto.html">Foto</a></li>
+                <li><a href="hadist.html">Hadist</a></li>
+                <li><a href="mailto:ukaabtabs@gmail.com" class="email-button">Email</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container fade-in">
+            <span class="hero-small">Portfolio Pribadi</span>
+            <h1 class="hero-title">Hasil karya dan project saya.</h1>
+            <p class="hero-description">
+                Tempat untuk menyimpan beberapa karya yang pernah saya buat selama belajar dan mencoba hal-hal baru.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="works fade-in">
+                <article class="work">
+                    <div class="cover">
+                        <img src="poester.png" alt="Desain Poster Porsche" onerror="this.src='https://via.placeholder.com/600x400?text=Poster+Porsche'">
+                    </div>
+                    <div class="body">
+                        <p class="type">Graphic Design</p>
+                        <h2>Poster Porsche</h2>
+                        <p>Desain poster bertema otomotif dengan konsep Porsche 911 dan tampilan visual yang elegan.</p>
+                        <a class="link" href="poester.png" target="_blank">Lihat karya &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="work">
+                    <div class="cover">
+                        <img src="uukays.png" alt="Desain Poster Parfum" onerror="this.src='https://via.placeholder.com/600x400?text=Poster+Parfum'">
+                    </div>
+                    <div class="body">
+                        <p class="type">Design</p>
+                        <h2>Poster Parfum</h2>
+                        <p>Desain promosi parfum dengan konsep elegan, modern, dan menggunakan perpaduan warna gelap serta gold.</p>
+                        <a class="link" href="uukays.png" target="_blank">Lihat karya &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="work">
+                    <div class="cover">
+                        <img src="Frame 85 (1).png" alt="Dashboard UI Design" onerror="this.src='https://via.placeholder.com/600x400?text=UI+Dashboard'">
+                    </div>
+                    <div class="body">
+                        <p class="type">UI Design</p>
+                        <h2>Dashboard Design</h2>
+                        <p>Desain dashboard modern dengan tampilan data, grafik, statistik, dan navigasi yang terstruktur.</p>
+                        <a class="link" href="Frame 85 (1).png" target="_blank">Lihat karya &rarr;</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="note fade-in">
+                Karya di halaman ini akan saya tambahkan dan perbarui seiring saya membuat project baru.
+            </div>
+        </div>
+    </section>
+
+    <div class="back-wrapper fade-in">
+        <a href="index.html" class="button">
+            &larr; Kembali ke Halaman Utama
+        </a>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <p>© 2026 <span class="footer-name">Ukasyah 'Abdurrohman</span></p>
+        <a href="mailto:ukaabtabs@gmail.com" class="footer-email">ukaabtabs@gmail.com</a>
+    </div>
+</footer>
+
+</body>
+</html>
