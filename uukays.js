@@ -91,7 +91,7 @@
                     fadeObs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12 });
+        }, { rootMargin: "0px 0px -10% 0px", threshold: 0 });
         fadeEls.forEach(function (el) { fadeObs.observe(el); });
     } else {
         fadeEls.forEach(function (el) { el.classList.add("is-visible"); });
@@ -347,6 +347,50 @@
             window.location.href = "mailto:ukaabtabs@gmail.com?subject=" + subject + "&body=" + bodyText;
             if (status) status.textContent = "Membuka aplikasi email… Terima kasih, " + name + "!";
         });
+    }
+
+    /* ---------- Custom cursor: dot + trailing ring ---------- */
+    var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (finePointer && !reduceMotion) {
+        var cursorDot = document.createElement("div");
+        var cursorRing = document.createElement("div");
+        cursorDot.className = "cursor-dot";
+        cursorRing.className = "cursor-ring";
+        cursorDot.setAttribute("aria-hidden", "true");
+        cursorRing.setAttribute("aria-hidden", "true");
+        body.appendChild(cursorDot);
+        body.appendChild(cursorRing);
+        body.classList.add("has-cursor");
+
+        var mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
+        var ringX = mouseX, ringY = mouseY;
+
+        document.addEventListener("mousemove", function (e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            cursorDot.style.transform = "translate(" + mouseX + "px," + mouseY + "px) translate(-50%,-50%)";
+        });
+
+        (function cursorFollow() {
+            ringX += (mouseX - ringX) * 0.16;
+            ringY += (mouseY - ringY) * 0.16;
+            cursorRing.style.transform = "translate(" + ringX.toFixed(1) + "px," + ringY.toFixed(1) + "px) translate(-50%,-50%)";
+            window.requestAnimationFrame(cursorFollow);
+        })();
+
+        var cursorHoverSel = "a, button, [data-lightbox], input, textarea, select, .foto-item, .karya-cover";
+        document.addEventListener("mouseover", function (e) {
+            var t = e.target.closest(cursorHoverSel);
+            if (t && !(e.relatedTarget && t.contains(e.relatedTarget))) body.classList.add("is-cursor-hover");
+        });
+        document.addEventListener("mouseout", function (e) {
+            var t = e.target.closest(cursorHoverSel);
+            if (t && !(e.relatedTarget && t.contains(e.relatedTarget))) body.classList.remove("is-cursor-hover");
+        });
+        document.addEventListener("mousedown", function () { body.classList.add("is-cursor-down"); });
+        document.addEventListener("mouseup", function () { body.classList.remove("is-cursor-down"); });
+        document.addEventListener("mouseleave", function () { body.classList.add("is-cursor-hidden"); });
+        document.addEventListener("mouseenter", function () { body.classList.remove("is-cursor-hidden"); });
     }
 
     /* Initial paint */

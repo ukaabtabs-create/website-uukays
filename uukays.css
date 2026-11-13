@@ -797,6 +797,49 @@ body.lightbox-open { overflow: hidden; }
 }
 
 /* ==========================================================================
+   CUSTOM CURSOR — dot + trailing ring (difference blend)
+   ========================================================================== */
+.cursor-dot,
+.cursor-ring {
+    position: fixed; top: 0; left: 0;
+    pointer-events: none;
+    z-index: 10000;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transition: opacity .3s ease;
+    will-change: transform;
+}
+.cursor-dot { width: 8px; height: 8px; background: #fff; }
+.cursor-ring {
+    width: 38px; height: 38px;
+    border: 1.5px solid rgba(255, 255, 255, .9);
+    transition: opacity .3s ease, width .35s var(--ease), height .35s var(--ease);
+}
+body.has-cursor .cursor-dot,
+body.has-cursor .cursor-ring { opacity: 1; }
+body.is-cursor-hidden .cursor-dot,
+body.is-cursor-hidden .cursor-ring { opacity: 0; }
+
+body.has-cursor,
+body.has-cursor a,
+body.has-cursor button,
+body.has-cursor .foto-item,
+body.has-cursor .karya-cover,
+body.has-cursor input,
+body.has-cursor textarea,
+body.has-cursor select,
+body.has-cursor label { cursor: none; }
+
+body.is-cursor-hover .cursor-ring { width: 64px; height: 64px; }
+body.is-cursor-hover .cursor-dot { opacity: .45; }
+body.is-cursor-down .cursor-ring { width: 26px; height: 26px; }
+
+@media (hover: none), (pointer: coarse) {
+    .cursor-dot, .cursor-ring { display: none; }
+}
+
+/* ==========================================================================
    REDUCED MOTION
    ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
