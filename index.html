@@ -7,7 +7,16 @@
     <meta name="description" content="Website pribadi Ukasyah 'Abdurrohman. Cerita, kegiatan, hasil karya, foto, dan hadist pilihan.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Raleway:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#F3EEE3">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem("uukays-theme"); } catch (e) {}
+            if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
     <link rel="stylesheet" href="uukays.css">
 </head>
 <body>
@@ -55,6 +64,24 @@
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </a>
     </section>
+
+    <!-- Marquee ribbon -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <span>Personal Portfolio</span><i>&#10022;</i>
+                <span>Ukasyah 'Abdurrohman</span><i>&#10022;</i>
+                <span>Design &middot; Sport &middot; Adventure</span><i>&#10022;</i>
+                <span>Purbalingga &middot; Indonesia</span><i>&#10022;</i>
+            </div>
+            <div class="marquee-group">
+                <span>Personal Portfolio</span><i>&#10022;</i>
+                <span>Ukasyah 'Abdurrohman</span><i>&#10022;</i>
+                <span>Design &middot; Sport &middot; Adventure</span><i>&#10022;</i>
+                <span>Purbalingga &middot; Indonesia</span><i>&#10022;</i>
+            </div>
+        </div>
+    </div>
 
     <main>
         <!-- ============ ABOUT ============ -->

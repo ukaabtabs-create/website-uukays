@@ -7,7 +7,16 @@
     <meta name="description" content="Kumpulan hadist pilihan sebagai pengingat dan pelajaran sehari-hari.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Raleway:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#F3EEE3">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem("uukays-theme"); } catch (e) {}
+            if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
     <link rel="stylesheet" href="uukays.css">
 </head>
 <body>
@@ -44,6 +53,23 @@
             <p class="hero-desc">Kumpulan hadist sebagai pengingat dan pelajaran dalam menjalani kehidupan sehari-hari.</p>
         </div>
     </section>
+
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <span>Islamic Collection</span><i>&#10022;</i>
+                <span>Hadist Pilihan</span><i>&#10022;</i>
+                <span>Pengingat Sehari-hari</span><i>&#10022;</i>
+                <span>2026</span><i>&#10022;</i>
+            </div>
+            <div class="marquee-group">
+                <span>Islamic Collection</span><i>&#10022;</i>
+                <span>Hadist Pilihan</span><i>&#10022;</i>
+                <span>Pengingat Sehari-hari</span><i>&#10022;</i>
+                <span>2026</span><i>&#10022;</i>
+            </div>
+        </div>
+    </div>
 
     <main>
         <section class="section">

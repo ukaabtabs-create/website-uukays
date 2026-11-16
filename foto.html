@@ -7,7 +7,16 @@
     <meta name="description" content="Kumpulan foto dan momen pilihan Ukasyah 'Abdurrohman.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Raleway:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Montserrat:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#F3EEE3">
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem("uukays-theme"); } catch (e) {}
+            if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", t);
+        })();
+    </script>
     <link rel="stylesheet" href="uukays.css">
 </head>
 <body>
@@ -45,6 +54,23 @@
         </div>
     </section>
 
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-group">
+                <span>Photo Gallery</span><i>&#10022;</i>
+                <span>Moments &amp; Memories</span><i>&#10022;</i>
+                <span>Sunrise &middot; Prau</span><i>&#10022;</i>
+                <span>2026</span><i>&#10022;</i>
+            </div>
+            <div class="marquee-group">
+                <span>Photo Gallery</span><i>&#10022;</i>
+                <span>Moments &amp; Memories</span><i>&#10022;</i>
+                <span>Sunrise &middot; Prau</span><i>&#10022;</i>
+                <span>2026</span><i>&#10022;</i>
+            </div>
+        </div>
+    </div>
+
     <main>
         <section class="section">
             <div class="dividerOT"></div>
@@ -63,7 +89,7 @@
                         <img src="uu10.webp" alt="Foto di papan puncak Gunung Prau 2590 MDPL"><span class="foto-plus">+</span><span class="foto-caption">Puncak Gunung Prau 2590 MDPL</span>
                     </a>
                     <a class="foto-item tall" href="uu12.webp" data-lightbox="foto" data-caption="Melintasi jalur Patak Banteng">
-                        <img src=""uu12.webp" alt="Berlari di jalur pendakian Patak Banteng"><span class="foto-plus">+</span><span class="foto-caption">Jalur Patak Banteng</span>
+                        <img src="uu12.webp" alt="Berlari di jalur pendakian Patak Banteng"><span class="foto-plus">+</span><span class="foto-caption">Jalur Patak Banteng</span>
                     </a>
                     <a class="foto-item" href="uu11.webp" data-lightbox="foto" data-caption="Menyambut sunrise di puncak Prau">
                         <img src="uu11.webp" alt="Menyambut sunrise di puncak Gunung Prau"><span class="foto-plus">+</span><span class="foto-caption">Menyambut sunrise di puncak</span>
@@ -152,6 +178,18 @@
                     </a>
                     <a class="foto-item tall" href="uu6.jpg" data-lightbox="foto" data-caption="Selfie bersama teman di malam hari">
                         <img src="uu6.jpg" alt="Selfie bersama teman-teman pada malam hari"><span class="foto-plus">+</span><span class="foto-caption">Selfie bareng teman</span>
+                    </a>
+                    <a class="foto-item tall" href="foto_sholat_bersama.jpg" data-lightbox="foto" data-caption="Berdoa bersama teman sebelum makan di depan musala">
+                        <img src="foto_sholat_bersama.jpg" alt="Berdoa bersama teman di depan musala"><span class="foto-plus">+</span><span class="foto-caption">Berdoa bersama teman</span>
+                    </a>
+                    <a class="foto-item tall" href="foto_futsal_14.jpg" data-lightbox="foto" data-caption="Siap bertanding futsal dengan jersey nomor 14">
+                        <img src="foto_futsal_14.jpg" alt="Punggung jersey futsal bertuliskan UUKAYZ nomor 14"><span class="foto-plus">+</span><span class="foto-caption">Jersey nomor 14</span>
+                    </a>
+                    <a class="foto-item wide" href="foto_sertifikat_tahfidz.jpg" data-lightbox="foto" data-caption="Menerima sertifikat tahfidz di Taisiru Ar-Rahman Boarding School">
+                        <img src="foto_sertifikat_tahfidz.jpg" alt="Penyerahan sertifikat tahfidz Al-Qur'an"><span class="foto-plus">+</span><span class="foto-caption">Sertifikat tahfidz</span>
+                    </a>
+                    <a class="foto-item wide" href="foto_tpa_anak.jpg" data-lightbox="foto" data-caption="Kebersamaan santri TPA menyambut tahun baru Imlek">
+                        <img src="foto_tpa_anak.jpg" alt="Foto bersama anak-anak TPA di depan gapura Gong Xi Fa Cai"><span class="foto-plus">+</span><span class="foto-caption">Kebersamaan santri TPA</span>
                     </a>
                 </div>
                 <p class="note-line fade-in-element">A glimpse into our world.</p>
